@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
         Gravity();
         Interaction();
 
-        HUDManager.hudManager.playerName.text = playerStats.characterName;
+        HUDManager.hudManager.playerName.text = playerStats.CharacterName;
 
     }
 

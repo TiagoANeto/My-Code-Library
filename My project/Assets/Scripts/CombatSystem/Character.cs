@@ -16,17 +16,17 @@ public class Character : MonoBehaviour
 
     protected virtual void Start()
     {
-        characterStats.hp = characterStats.maxHp;
-        HUDManager.hudManager.playerHpBar.maxValue = characterStats.maxHp;
-        HUDManager.hudManager.playerHpBar.value = characterStats.hp;
+        characterStats.Hp= characterStats.MaxHp;
+        HUDManager.hudManager.playerHpBar.maxValue = characterStats.MaxHp;
+        HUDManager.hudManager.playerHpBar.value = characterStats.Hp;
     }
 
     protected virtual void TakeDamage(int damageValue)
     {
-        characterStats.hp -= damageValue;
-        HUDManager.hudManager?.UpdateHP(characterStats.hp);
+        characterStats.Hp-= damageValue;
+        HUDManager.hudManager?.UpdateHP(characterStats.Hp);
         
-        if(characterStats.hp <= 0)
+        if(characterStats.Hp<= 0)
         {
             Destroy(gameObject);
             //Lógica de morte certinha tem que entrar aqui depois
@@ -35,14 +35,14 @@ public class Character : MonoBehaviour
 
     protected virtual void IncreaseHP(int value)
     {
-        characterStats.hp += value;
-        HUDManager.hudManager?.UpdateHP(characterStats.hp);
+        characterStats.Hp+= value;
+        HUDManager.hudManager?.UpdateHP(characterStats.Hp);
     }
 
     protected virtual void IncreaseMana(int value)
     {
-        characterStats.mana += value;
-        HUDManager.hudManager?.UpdateMana(characterStats.mana);
+        characterStats.Mana += value;
+        HUDManager.hudManager?.UpdateMana(characterStats.Mana);
     }
 
     /// <summary>
@@ -50,13 +50,13 @@ public class Character : MonoBehaviour
     /// </summary>
     public void AddStatsHP()
     {
-        characterStats.hp += 5;
-        HUDManager.hudManager?.UpdateHP(characterStats.hp);
+        characterStats.Hp+= 5;
+        HUDManager.hudManager?.UpdateHP(characterStats.Hp);
     }
 
     public void RemoveStatsHP()
     {
-        characterStats.hp -=5;
-        HUDManager.hudManager?.UpdateHP(characterStats.hp);
+        characterStats.Hp-=5;
+        HUDManager.hudManager?.UpdateHP(characterStats.Hp);
     }
 }
